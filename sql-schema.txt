@@ -1,0 +1,36 @@
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') NOT NULL DEFAULT 'user',
+    PRIMARY KEY (id),
+    UNIQUE KEY (email)
+);
+
+CREATE TABLE jira_boards (
+    id INT NOT NULL AUTO_INCREMENT,
+    board_id VARCHAR(255) NOT NULL,
+    board_name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE grafana_dashboards (
+    id INT NOT NULL AUTO_INCREMENT,
+    dashboard_id VARCHAR(255) NOT NULL,
+    dashboard_name VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role ENUM('user', 'admin') DEFAULT 'user',
+  PRIMARY KEY (id),
+  UNIQUE KEY (email)
+);
+
+INSERT INTO users (email, password, role)
+VALUES ('ajith4uuu@gmail.com', '$2y$10$D80RYx97NpKyfRyblJrG1e8WCljleU.bGJfViG6U.Vx6U5/ZLzjX6', 'admin');
